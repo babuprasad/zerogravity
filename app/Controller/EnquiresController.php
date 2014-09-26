@@ -27,7 +27,7 @@ $this->redirect(array('action'=>'index'));
 
 if(!isset($this->data['Enquires']['keyword']))
 {
-	echo "if ";
+	// echo "if ";
 	//$id = $this->params['named']['status'];
 	$id=$this->request->status;
 	$this->paginate = array('limit' => 10,'order'=>array('Enquires.eid' => 'desc'));
@@ -40,8 +40,8 @@ if(!isset($this->data['Enquires']['keyword']))
 else
 {
 	$id = $this->data['Enquires']['keyword'];
-	echo "else";
-	echo $id;
+	// echo "else";
+	// echo $id;
 	// $enquireslist = $this->paginate('Enquires');   
 	$enquireslist=$this->Enquires->find('all',array('conditions'=>array('Enquires.status'=>$id)));
 	if(isset($enquireslist))
